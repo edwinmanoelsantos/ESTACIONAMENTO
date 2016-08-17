@@ -1,19 +1,3 @@
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JTextField;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JButton;
-import javax.swing.table.DefaultTableModel;
-
 public class Edwin {
 
 	static JPanel painel1 = new JPanel();
@@ -21,6 +5,7 @@ public class Edwin {
 	
 
 	static JFrame telainicial = new JFrame();
+	static JFrame telamenu = new JFrame();
 	static JFrame telaentrada = new JFrame();
 	static JFrame telasaida = new JFrame();
 	static JFrame telaestacionamento1 = new JFrame();
@@ -46,7 +31,9 @@ public class Edwin {
 	static JButton operador = new JButton("OPERADOR");
 	static JButton reserva = new JButton("RESERVA");
 	static JButton vagaslivres = new JButton("VAGAS LIVRES");
-	static JButton vagas olcupadas = new JButton("VAGAS OCUPADAS");
+	static JButton vagasolcupadas = new JButton("VAGAS OCUPADAS");
+	static JButton vagascarro = new JButtron("VAGAS CARRO");
+	static JButton vaganmoto = new JButton("VAGAS MOTO");
 	static JButton vagasprioritarias = new JButton("VAGAS PRIORITARIAS");
 	static JButton faturamento = new JButton("FATURAMENTO");
 	static JButton entradaveiculo = new JButton("ENTRADA VEICULO");
@@ -129,7 +116,7 @@ public class Edwin {
 	static JButton 058 = new JButton("058");
 	static JButton 059 = new JButton("059");
 	static JButton 060 = new JButton("060");
-	
+
 	static JTable tabela1;
 
 	static JScrollPane rolagem1 = new JScrollPane(tabela1);
@@ -173,7 +160,35 @@ public static void main(String[] args) {
 		telainicial.setResizable(false);
 		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
 		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+
+	telainicial.add(inicio).setBounds(, , , );
+	telainicial.add(sair).setBounds(, , , );
 	}
+static void telamenu() {
+
+		telainicial.setTitle("MENU");
+		telainicial.setSize(1365, 700);
+		telainicial.setLayout(null);
+		telainicial.setVisible(true);
+		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telainicial.setResizable(false);
+		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
+		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+
+	telamenu.add(vaga).setBounds(, , , );
+	telamenu.add(consultavaga).setBounds(, , , );
+	telamenu.add(cliente).setBounds(, , , );
+	telamenu.add(operador).setBounds(, , , );
+	telamenu.add(reserva).setBounds(, , , );
+	telamenu.add(vagaslivres).setBounds(, , , );
+	telamenu.add(vagasocupadas).setBounds(, , , );
+	telamenu.add(vagascarro).setBounds(, , , );
+	telamenu.add(vagasmoto).setBounds(, , , );
+	telamenu.add(vagasprioritarias).setBounds(, , , );
+	telamenu.add().setBounds(, , , );
+	telamenu.add().setBounds(, , , );
+	}
+
 static void telaentrada() {
 
 		telainicial.setTitle("ENTRADA");
@@ -328,7 +343,8 @@ static void telacliente() {
 		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
 		telainicial.add(sair1).setBounds(700, 300, 300, 100);
 	}
-	static void botoes() {
+
+static void botoes() {
 
 		cadastrar.addActionListener(new ActionListener() {
 
