@@ -129,6 +129,33 @@ public class Edwin {
 	static JButton 058 = new JButton("058");
 	static JButton 059 = new JButton("059");
 	static JButton 060 = new JButton("060");
+	
+	static JTable tabela1;
+
+	static JScrollPane rolagem1 = new JScrollPane(tabela1);
+
+	static int n1 = 0;
+	static int id_consulta1 = 0;
+	
+
+	static String[][] introduzir1 = new String[100][6];
+	static String[] tabela12 = new String[] { "PLACA", "VAGA", "HORA ENTRADA", "HORA SAIDA", "TOTAL DE HORAS", "VALOR A PAGAR"};
+	
+
+	static DefaultTableModel tabela13 = new DefaultTableModel(tabela12, 0);
+
+	static JMenuBar menu1 = new JMenuBar();
+	static JMenu menu12 = new JMenu("MENU");
+	
+	static JMenuItem faturamento = new JMenuItem("FATURAMENTO");
+	static JMenuItem vagalivre = new JMenuItem("VAGAS LIVRES");
+	static JMenuItem vagaocupadas = new JMenuItem("VAGAS OCUPADAS");
+	static JMenuItem vagacarro = new JMenuItem("VAGAS DE CARROS");
+	static JMenuItem vagamoto = new JMenuItem("VAGAS DE MOTOS");
+	static JMenuItem vagaprioritrio = new JMenuItem("VAGAS PRIORITARIAS");
+	static JMenuItem excluir = new JMenuItem("EXCLUIR");
+	static JMenuItem voltar = new JMenuItem("VOLTAR");
+	static JMenuItem sair = new JMenuItem("SAIR");
 
 public static void main(String[] args) {
 		Tela_Inicial();
@@ -301,3 +328,14 @@ static void telacliente() {
 		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
 		telainicial.add(sair1).setBounds(700, 300, 300, 100);
 	}
+	static void botoes() {
+
+		cadastrar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				telainicial.setVisible(false);
+
+			}
+		});
