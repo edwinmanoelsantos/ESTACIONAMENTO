@@ -1,3 +1,22 @@
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
+
 public class Edwin {
 
 	static JPanel painel1 = new JPanel();
@@ -134,21 +153,26 @@ public class Edwin {
 	static JMenuBar menu1 = new JMenuBar();
 	static JMenu menu12 = new JMenu("MENU");
 	
-	static JMenuItem faturamento = new JMenuItem("FATURAMENTO");
+	static JMenuItem faturamento1 = new JMenuItem("FATURAMENTO");
 	static JMenuItem vagalivre = new JMenuItem("VAGAS LIVRES");
 	static JMenuItem vagaocupadas = new JMenuItem("VAGAS OCUPADAS");
 	static JMenuItem vagacarro = new JMenuItem("VAGAS DE CARROS");
 	static JMenuItem vagamoto = new JMenuItem("VAGAS DE MOTOS");
 	static JMenuItem vagaprioritrio = new JMenuItem("VAGAS PRIORITARIAS");
 	static JMenuItem excluir = new JMenuItem("EXCLUIR");
-	static JMenuItem voltar = new JMenuItem("VOLTAR");
-	static JMenuItem sair = new JMenuItem("SAIR");
+	static JMenuItem voltar12 = new JMenuItem("VOLTAR");
+	static JMenuItem sair1 = new JMenuItem("SAIR");
 
 public static void main(String[] args) {
-		Tela_Inicial();
+		telainicial();
 		botoes();
 
 	}
+
+	private static void botoes() {
+	// TODO Auto-generated method stub
+	
+}
 
 	static void telainicial() {
 
@@ -158,200 +182,160 @@ public static void main(String[] args) {
 		telainicial.setVisible(true);
 		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
 
-	telainicial.add(inicio).setBounds(, , , );
-	telainicial.add(sair).setBounds(, , , );
+
+	telainicial.add(inicio).setBounds(100, 100, 100, 100);
+	telainicial.add(sair).setBounds(100, 100, 100, 100);
 	}
 static void telamenu() {
 
-		telainicial.setTitle("MENU");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telamenu.setTitle("MENU");
+		telamenu.setSize(1365, 700);
+		telamenu.setLayout(null);
+		telamenu.setVisible(true);
+		telamenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telamenu.setResizable(false);
+		
 
-	telamenu.add(vaga).setBounds(, , , );
-	telamenu.add(consultavaga).setBounds(, , , );
-	telamenu.add(cliente).setBounds(, , , );
-	telamenu.add(operador).setBounds(, , , );
-	telamenu.add(reserva).setBounds(, , , );
-	telamenu.add(vagaslivres).setBounds(, , , );
-	telamenu.add(vagasocupadas).setBounds(, , , );
-	telamenu.add(vagascarro).setBounds(, , , );
-	telamenu.add(vagasmoto).setBounds(, , , );
-	telamenu.add(vagasprioritarias).setBounds(, , , );
-	telamenu.add().setBounds(, , , );
-	telamenu.add().setBounds(, , , );
+	telamenu.add(vaga).setBounds(100, 100, 100, 100);
+	telamenu.add(consultavaga).setBounds(100, 100, 100, 100);
+	telamenu.add(cliente).setBounds(100, 100, 100, 100);
+	telamenu.add(operador).setBounds(100, 100, 100, 100);
+	telamenu.add(reserva).setBounds(100, 100, 100, 100);
+	telamenu.add(vagaslivres).setBounds(100, 100, 100, 100);
+	telamenu.add(vagasocupadas).setBounds(100, 100, 100, 100);
+	telamenu.add(vagascarro).setBounds(100, 100, 100, 100);
+	telamenu.add(vagasmoto).setBounds(100, 100, 100, 100);
+	telamenu.add(vagasprioritarias).setBounds(100, 100, 100, 100);
+	telamenu.add().setBounds(100, 100, 100, 100);
+	telamenu.add().setBounds(100, 100, 100, 100);
 	}
 
 static void telaentrada() {
 
-		telainicial.setTitle("ENTRADA");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telaentrada.setTitle("ENTRADA");
+		telaentrada.setSize(1365, 700);
+		telaentrada.setLayout(null);
+		telaentrada.setVisible(true);
+		telaentrada.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaentrada.setResizable(false);
+	
 	}
 static void telasaida() {
 
-		telainicial.setTitle("SAIDA");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telasaida.setTitle("SAIDA");
+		telasaida.setSize(1365, 700);
+		telasaida.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telasaida.setResizable(false);
+		
 	}
 static void telaestacionamento1() {
 
-		telainicial.setTitle("1°ANDAR DO ESTACIONAMENTO");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telaestacionamento1.setTitle("1°ANDAR DO ESTACIONAMENTO");
+		telaestacionamento1.setSize(1365, 700);
+		telaestacionamento1.setVisible(true);
+		telaestacionamento1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaestacionamento1.setResizable(false);
+	
 	}
 static void telaestacionamento2() {
 
-		telainicial.setTitle("2°ANDAR DO ESTACIONAMENTO");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telaestacionamento2.setTitle("2°ANDAR DO ESTACIONAMENTO");
+		telaestacionamento2.setSize(1365, 700);
+		telaestacionamento2.setVisible(true);
+		telaestacionamento2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaestacionamento2.setResizable(false);
+		
 	}
 static void telaestacionamento3() {
 
-		telainicial.setTitle("3°ANDAR DO ESTACIONAMENTO");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telaestacionamento3.setTitle("3°ANDAR DO ESTACIONAMENTO");
+		telaestacionamento3.setSize(1365, 700);
+		telaestacionamento3.setVisible(true);
+		telaestacionamento3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaestacionamento3.setResizable(false);
+		
 	}
 static void telafuncionario() {
 
-		telainicial.setTitle("FUNCIONARIO");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telafuncionario.setTitle("FUNCIONARIO");
+		telafuncionario.setSize(1365, 700);
+		telafuncionario.setVisible(true);
+		telafuncionario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telafuncionario.setResizable(false);
+	
 	}
 static void telavagas() {
 
-		telainicial.setTitle("VAGAS");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telavagas.setTitle("VAGAS");
+		telavagas.setSize(1365, 700);
+		telavagas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telavagas.setResizable(false);
+		
 	}
 static void telacarro() {
 
-		telainicial.setTitle("VAGAS DE CARROS NORMAIS");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telacarro.setTitle("VAGAS DE CARROS NORMAIS");
+		telacarro.setSize(1365, 700);
+		telacarro.setVisible(true);
+		telacarro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telacarro.setResizable(false);
+		
 	}
 static void telamoto() {
 
-		telainicial.setTitle("VAGAS DE MOTOS");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telamoto.setTitle("VAGAS DE MOTOS");
+		telamoto.setSize(1365, 700);
+		telamoto.setVisible(true);
+		telamoto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telamoto.setResizable(false);
+		
 	}
 static void telaprioritario() {
 
-		telainicial.setTitle("VAGAS PRIORITARIAS");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		Frame telaprioritario;
+		telaprioritario.setTitle("VAGAS PRIORITARIAS");
+		telaprioritario.setSize(1365, 700);
+		telaprioritario.setVisible(true);
+		((JFrame) telaprioritario).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaprioritario.setResizable(false);
+		
 	}
 static void telaconsultavaga() {
 
-		telainicial.setTitle("CONSULTA VAGA");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telaconsultavaga.setTitle("CONSULTA VAGA");
+		telaconsultavaga.setSize(1365, 700);
+		telaconsultavaga.setVisible(true);
+		telaconsultavaga.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaconsultavaga.setResizable(false);
+		
 	}
 static void telafaturamnento() {
 
-		telainicial.setTitle("FATURAMENTO");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		Frame telafaturamnento;
+		telafaturamnento.setTitle("FATURAMENTO");
+		telafaturamnento.setSize(1365, 700);
+		telafaturamnento.setVisible(true);
+		((JFrame) telafaturamnento).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telafaturamnento.setResizable(false);
+		
 	}
 static void telareserva() {
 
-		telainicial.setTitle("RESERVA");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telareserva.setTitle("RESERVA");
+		telareserva.setSize(1365, 700);
+		telareserva.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telareserva.setResizable(false);
+		
 	}
 static void telacliente() {
 
-		telainicial.setTitle("CLIENTE");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-		telainicial.add(cadastrar).setBounds(300, 300, 300, 100);
-		telainicial.add(sair1).setBounds(700, 300, 300, 100);
+		telacliente.setTitle("CLIENTE");
+		telacliente.setSize(1365, 700);
+		telacliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telacliente.setResizable(false);
+		
 	}
 
-static void botoes() {
 
-		cadastrar.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				telainicial.setVisible(false);
-
-			}
-		});
+}
