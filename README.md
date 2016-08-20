@@ -3,7 +3,9 @@ import java.awt.Component;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -23,40 +25,24 @@ public class Edwin {
 	static JPanel painel2 = new JPanel();
 	
 
-	static JFrame telainicial = new JFrame();
-	static JFrame telamenu = new JFrame();
-	static JFrame telaentrada = new JFrame();
-	static JFrame telasaida = new JFrame();
-	static JFrame telaestacionamento1 = new JFrame();
-	static JFrame telaestacionamento2 = new JFrame();
-	static JFrame telaestacionamento3 = new JFrame();
-	static JFrame telafuncionario = new JFrame();
-	static JFrame telavagas = new JFrame();
-	static JFrame telavagalivre = new JFrame();
-	static JFrame telavagaocupada = new JFrame();
-	static JFrame telacarro = new JFrame();
-	static JFrame telamoto = new JFrame();
-	static JFrame telaprioritaria = new JFrame();
-	static JFrame telaconsultavaga = new JFrame();
-	static JFrame telafaturamento = new JFrame();
-	static JFrame telareserva = new JFrame();
-	static JFrame telacliente = new JFrame();
+	static JFrame inicial = new JFrame();
+	static JFrame menu = new JFrame();
+	static JFrame andar01 = new JFrame();
+	static JFrame andar02 = new JFrame();
+	static JFrame andar03 = new JFrame();
+	static JFrame consulta = new JFrame();
+
 
 	static JButton inicio = new JButton("INICIO");
 	static JButton sair = new JButton("SAIR");
-	static JButton vaga = new JButton("VAGA");
-	static JButton consultavaga = new JButton("CONSULTA");
-	static JButton cliente = new JButton("CLIENTE");
-	static JButton operador = new JButton("OPERADOR");
-	static JButton reserva = new JButton("RESERVA");
-	static JButton vagaslivres = new JButton("VAGAS LIVRES");
-	static JButton vagasolcupadas = new JButton("VAGAS OCUPADAS");
-	static JButton vagascarro = new JButtron("VAGAS CARRO");
-	static JButton vaganmoto = new JButton("VAGAS MOTO");
-	static JButton vagasprioritarias = new JButton("VAGAS PRIORITARIAS");
-	static JButton faturamento = new JButton("FATURAMENTO");
-	static JButton entradaveiculo = new JButton("ENTRADA VEICULO");
-	static JButton saidaveiculo = new JButton("SAIDA VEICULO");
+	static JButton consultar = new JButton("CONSULTA");
+	static JButton carro = new JButton("VAGAS CARRO");
+	static JButton moto = new JButton("VAGAS MOTO");
+	static JButton prioritarias = new JButton("VAGAS PRIORITARIAS");
+	
+	static JButton andar1 = new JButton("1°ANDAR");	
+	static JButton andar2 = new JButton("2°ANDAR");
+	static JButton andar3 = new JButton("3°ANDAR");
 
 	static JButton voltar = new JButton("VOLTAR");
 	static JButton voltar0 = new JButton("VOLTAR");
@@ -65,76 +51,85 @@ public class Edwin {
 	static JButton voltar3 = new JButton("VOLTAR");
 	static JButton voltar4 = new JButton("VOLTAR");
 	static JButton voltar5 = new JButton("VOLTAR");
-	static JButton voltar6 = new JButton("VOLTAR");
-	static JButton voltar7 = new JButton("VOLTAR");
-	static JButton voltar8 = new JButton("VOLTAR");
-	static JButton voltar9 = new JButton("VOLTAR");
-	static JButton voltar10 = new JButton("VOLTAR");
-	static JButton voltar11 = new JButton("VOLTAR");
 
+
+	static JTable tabela;
+	
+
+	static JScrollPane rolagem = new JScrollPane(tabela);
+	
+
+	static int n = 0;
+
+
+	static String[][] introduzir11 = new String[100][6];
+	static String[][] introduzir = new String[100][4];
+	static String[] tabela0 = new String[] { "N°PLACA", "N°VAGA", "VEICULO", "TIPO DE VAGA"};
+	static DefaultTableModel tabela2 = new DefaultTableModel(tabela0, 0);
+	
 //vagas para o 1°andar:
-	static JButton 001 = new JButton("001");
-	static JButton 002 = new JButton("002");
-	static JButton 003 = new JButton("003");
-	static JButton 004 = new JButton("004");
-	static JButton 005 = new JButton("005");
-	static JButton 006 = new JButton("006");
-	static JButton 007 = new JButton("007");
-	static JButton 008 = new JButton("008");
-	static JButton 009 = new JButton("009");
-	static JButton 010 = new JButton("010");
-	static JButton 011 = new JButton("011");
-	static JButton 012 = new JButton("012");
-	static JButton 013 = new JButton("013");
-	static JButton 014 = new JButton("014");
-	static JButton 015 = new JButton("015");
-	static JButton 016 = new JButton("016");
-	static JButton 017 = new JButton("017");
-	static JButton 018 = new JButton("018");
-	static JButton 019 = new JButton("019");
-	static JButton 020 = new JButton("020");
+	static JLabel vaga1 = new JLabel("01");
+	static JLabel vaga2 = new JLabel("02");
+	static JLabel vaga3 = new JLabel("03");
+	static JLabel vaga4 = new JLabel("04");
+	static JLabel vaga5 = new JLabel("05");
+	static JLabel vaga6 = new JLabel("06");
+	static JLabel vaga7 = new JLabel("07");
+	static JLabel vaga8 = new JLabel("08");
+	static JLabel vaga9 = new JLabel("09");
+	static JLabel vaga10 = new JLabel("10");
+	static JLabel vaga11 = new JLabel("11");
+	static JLabel vaga12 = new JLabel("12");
+	static JLabel vaga13 = new JLabel("13");
+	static JLabel vaga14 = new JLabel("14");
+	static JLabel vaga15 = new JLabel("15");
+	static JLabel vaga16 = new JLabel("16");
+	static JLabel vaga17 = new JLabel("17");
+	static JLabel vaga18 = new JLabel("18");
+	static JLabel vaga19 = new JLabel("19");
+	static JLabel vaga20 = new JLabel("20");
 //vagas para o 2°andar:
-	static JButton 021 = new JButton("021");
-	static JButton 022 = new JButton("022");
-	static JButton 023 = new JButton("023");
-	static JButton 024 = new JButton("024");
-	static JButton 025 = new JButton("025");
-	static JButton 026 = new JButton("026");
-	static JButton 027 = new JButton("027");
-	static JButton 028 = new JButton("028");
-	static JButton 029 = new JButton("029");
-	static JButton 030 = new JButton("030");
-	static JButton 031 = new JButton("031");
-	static JButton 032 = new JButton("032");
-	static JButton 033 = new JButton("033");
-	static JButton 034 = new JButton("034");
-	static JButton 035 = new JButton("035");
-	static JButton 036 = new JButton("036");
-	static JButton 037 = new JButton("037");
-	static JButton 038 = new JButton("038");
-	static JButton 039 = new JButton("039");
-	static JButton 040 = new JButton("040");
+	static JLabel vaga21 = new JLabel("21");
+	static JLabel vaga22 = new JLabel("22");
+	static JLabel vaga23 = new JLabel("23");
+	static JLabel vaga24 = new JLabel("24");
+	static JLabel vaga25 = new JLabel("25");
+	static JLabel vaga26 = new JLabel("26");
+	static JLabel vaga27 = new JLabel("27");
+	static JLabel vaga28 = new JLabel("28");
+	static JLabel vaga29 = new JLabel("29");
+	static JLabel vaga30 = new JLabel("30");
+	static JLabel vaga31 = new JLabel("31");
+	static JLabel vaga32 = new JLabel("32");
+	static JLabel vaga33 = new JLabel("33");
+	static JLabel vaga34 = new JLabel("34");
+	static JLabel vaga35 = new JLabel("35");
+	static JLabel vaga36 = new JLabel("36");
+	static JLabel vaga37 = new JLabel("37");
+	static JLabel vaga38 = new JLabel("38");
+	static JLabel vaga39 = new JLabel("39");
+	static JLabel vaga40 = new JLabel("40");
 //vagas para o 3°andar:
-	static JButton 041 = new JButton("041");
-	static JButton 042 = new JButton("042");
-	static JButton 043 = new JButton("043");
-	static JButton 044 = new JButton("044");
-	static JButton 045 = new JButton("045");
-	static JButton 046 = new JButton("046");
-	static JButton 047 = new JButton("047");
-	static JButton 048 = new JButton("048");
-	static JButton 049 = new JButton("049");
-	static JButton 050 = new JButton("050");
-	static JButton 051 = new JButton("051");
-	static JButton 052 = new JButton("052");
-	static JButton 053 = new JButton("053");
-	static JButton 054 = new JButton("054");
-	static JButton 055 = new JButton("055");
-	static JButton 056 = new JButton("056");
-	static JButton 057 = new JButton("057");
-	static JButton 058 = new JButton("058");
-	static JButton 059 = new JButton("059");
-	static JButton 060 = new JButton("060");
+	static JLabel vaga41 = new JLabel("41");
+	static JLabel vaga42 = new JLabel("42");
+	static JLabel vaga43 = new JLabel("43");
+	static JLabel vaga44 = new JLabel("44");
+	static JLabel vaga45 = new JLabel("45");
+	static JLabel vaga46 = new JLabel("46");
+	static JLabel vaga47 = new JLabel("47");
+	static JLabel vaga48 = new JLabel("48");
+	static JLabel vaga49 = new JLabel("49");
+	static JLabel vaga50 = new JLabel("50");
+	static JLabel vaga51 = new JLabel("51");
+	static JLabel vaga52 = new JLabel("52");
+	static JLabel vaga53 = new JLabel("53");
+	static JLabel vaga54 = new JLabel("54");
+	static JLabel vaga55 = new JLabel("55");
+	static JLabel vaga56 = new JLabel("56");
+	static JLabel vaga57 = new JLabel("57");
+	static JLabel vaga58 = new JLabel("58");
+	static JLabel vaga59 = new JLabel("59");
+	static JLabel vaga60 = new JLabel("60");
 
 	static JTable tabela1;
 
@@ -144,198 +139,354 @@ public class Edwin {
 	static int id_consulta1 = 0;
 	
 
-	static String[][] introduzir1 = new String[100][6];
-	static String[] tabela12 = new String[] { "PLACA", "VAGA", "HORA ENTRADA", "HORA SAIDA", "TOTAL DE HORAS", "VALOR A PAGAR"};
+	static String[][] introduzir1 = new String[60][4];
+	static String[] tabela12 = new String[] { "N°PLACA", "N°VAGA", "VEICULO", "TIPO DE VAGA"};
 	
 
 	static DefaultTableModel tabela13 = new DefaultTableModel(tabela12, 0);
 
-	static JMenuBar menu1 = new JMenuBar();
-	static JMenu menu12 = new JMenu("MENU");
-	
-	static JMenuItem faturamento1 = new JMenuItem("FATURAMENTO");
-	static JMenuItem vagalivre = new JMenuItem("VAGAS LIVRES");
-	static JMenuItem vagaocupadas = new JMenuItem("VAGAS OCUPADAS");
-	static JMenuItem vagacarro = new JMenuItem("VAGAS DE CARROS");
-	static JMenuItem vagamoto = new JMenuItem("VAGAS DE MOTOS");
-	static JMenuItem vagaprioritrio = new JMenuItem("VAGAS PRIORITARIAS");
-	static JMenuItem excluir = new JMenuItem("EXCLUIR");
-	static JMenuItem voltar12 = new JMenuItem("VOLTAR");
-	static JMenuItem sair1 = new JMenuItem("SAIR");
 
 public static void main(String[] args) {
-		telainicial();
+	
+	ArrayList lista = new ArrayList();
+     ArrayList<Integer> possiveis = new ArrayList<Integer>();
+     for (int i = 0; i < 60; i++) {
+         possiveis.add(i);
+     }
+     Collections.shuffle(possiveis);
+
+     for (int i = 0; i < 1 ; i++) {
+         System.out.println(possiveis.get(i));
+       }
+	
+		inicial();
+		menu();
+		consulta();
+		andar01();
+		andar02();
+		andar03();
 		botoes();
-
-	}
-
-	private static void botoes() {
-	// TODO Auto-generated method stub
-	
-}
-
-	static void telainicial() {
-
-		telainicial.setTitle("TELA INICIAL");
-		telainicial.setSize(1365, 700);
-		telainicial.setLayout(null);
-		telainicial.setVisible(true);
-		telainicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telainicial.setResizable(false);
-
-
-	telainicial.add(inicio).setBounds(100, 100, 100, 100);
-	telainicial.add(sair).setBounds(100, 100, 100, 100);
-	}
-static void telamenu() {
-
-		telamenu.setTitle("MENU");
-		telamenu.setSize(1365, 700);
-		telamenu.setLayout(null);
-		telamenu.setVisible(true);
-		telamenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telamenu.setResizable(false);
 		
 
-	telamenu.add(vaga).setBounds(100, 100, 100, 100);
-	telamenu.add(consultavaga).setBounds(100, 100, 100, 100);
-	telamenu.add(cliente).setBounds(100, 100, 100, 100);
-	telamenu.add(operador).setBounds(100, 100, 100, 100);
-	telamenu.add(reserva).setBounds(100, 100, 100, 100);
-	telamenu.add(vagaslivres).setBounds(100, 100, 100, 100);
-	telamenu.add(vagasocupadas).setBounds(100, 100, 100, 100);
-	telamenu.add(vagascarro).setBounds(100, 100, 100, 100);
-	telamenu.add(vagasmoto).setBounds(100, 100, 100, 100);
-	telamenu.add(vagasprioritarias).setBounds(100, 100, 100, 100);
-	telamenu.add().setBounds(100, 100, 100, 100);
-	telamenu.add().setBounds(100, 100, 100, 100);
 	}
 
-static void telaentrada() {
 
-		telaentrada.setTitle("ENTRADA");
-		telaentrada.setSize(1365, 700);
-		telaentrada.setLayout(null);
-		telaentrada.setVisible(true);
-		telaentrada.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telaentrada.setResizable(false);
-	
+	static void inicial() {
+
+		inicial.setTitle("TELA INICIAL");
+		inicial.setSize(1365, 700);
+		inicial.setLayout(null);
+		inicial.setVisible(true);
+		inicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		inicial.setResizable(false);
+
+
+	inicial.add(inicio).setBounds(100, 100, 100, 100);
+	inicial.add(sair).setBounds(100, 100, 100, 100);
 	}
-static void telasaida() {
+	static void menu() {
 
-		telasaida.setTitle("SAIDA");
-		telasaida.setSize(1365, 700);
-		telasaida.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telasaida.setResizable(false);
+		menu.setTitle("MENU");
+		menu.setSize(1365, 700);
+		menu.setLayout(null);
+		menu.setVisible(true);
+		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		menu.setResizable(false);
+
+
+		menu.add(voltar).setBounds(100, 100, 100, 100);
+		menu.add(consulta).setBounds(100, 100, 100, 100);
+		menu.add(carro).setBounds(100, 100, 100, 100);
+		menu.add(moto).setBounds(100, 100, 100, 100);
+		menu.add(prioritarias).setBounds(100, 100, 100, 100);
+		menu.add(andar1).setBounds(100, 100, 100, 100);
+		menu.add(andar2).setBounds(100, 100, 100, 100);
+		menu.add(andar3).setBounds(100, 100, 100, 100);
+	}
+	static void andar01() {
+
+		andar01.setTitle("1°ANDAR");
+		andar01.setSize(1365, 700);
+		andar01.setLayout(null);
+		andar01.setVisible(true);
+		andar01.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		andar01.setResizable(false);
+		
+		andar01.add(vaga1).setBounds(10, 70, 50, 20);
+		andar01.add(vaga2).setBounds(10, 70, 50, 20);
+		andar01.add(vaga2).setBounds(10, 70, 50, 20);
+		andar01.add(vaga3).setBounds(10, 70, 50, 20);
+		andar01.add(vaga4).setBounds(10, 70, 50, 20);
+		andar01.add(vaga5).setBounds(10, 70, 50, 20);
+		andar01.add(vaga6).setBounds(10, 70, 50, 20);
+		andar01.add(vaga7).setBounds(10, 70, 50, 20);
+		andar01.add(vaga8).setBounds(10, 70, 50, 20);
+		andar01.add(vaga9).setBounds(10, 70, 50, 20);
+		andar01.add(vaga10).setBounds(10, 70, 50, 20);
+		andar01.add(vaga11).setBounds(10, 70, 50, 20);
+		andar01.add(vaga12).setBounds(10, 70, 50, 20);
+		andar01.add(vaga13).setBounds(10, 70, 50, 20);
+		andar01.add(vaga14).setBounds(10, 70, 50, 20);
+		andar01.add(vaga15).setBounds(10, 70, 50, 20);
+		andar01.add(vaga16).setBounds(10, 70, 50, 20);
+		andar01.add(vaga17).setBounds(10, 70, 50, 20);
+		andar01.add(vaga18).setBounds(10, 70, 50, 20);
+		andar01.add(vaga19).setBounds(10, 70, 50, 20);
+		andar01.add(vaga20).setBounds(10, 70, 50, 20);
+
+		andar01.add(voltar).setBounds(100, 100, 100, 100);
+		andar01.add(consultar).setBounds(100, 100, 100, 100);
+		andar01.add(andar02).setBounds(100, 100, 100, 100);
+		andar01.add(andar03).setBounds(100, 100, 100, 100);
+	}
+	static void andar02() {
+
+		andar02.setTitle("2°ANDAR");
+		andar02.setSize(1365, 700);
+		andar02.setLayout(null);
+		andar02.setVisible(true);
+		andar02.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		andar02.setResizable(false);
+		
+		andar02.add(vaga21).setBounds(10, 70, 50, 20);
+		andar02.add(vaga22).setBounds(10, 70, 50, 20);
+		andar02.add(vaga22).setBounds(10, 70, 50, 20);
+		andar02.add(vaga23).setBounds(10, 70, 50, 20);
+		andar02.add(vaga24).setBounds(10, 70, 50, 20);
+		andar02.add(vaga25).setBounds(10, 70, 50, 20);
+		andar02.add(vaga26).setBounds(10, 70, 50, 20);
+		andar02.add(vaga27).setBounds(10, 70, 50, 20);
+		andar02.add(vaga28).setBounds(10, 70, 50, 20);
+		andar02.add(vaga29).setBounds(10, 70, 50, 20);
+		andar02.add(vaga30).setBounds(10, 70, 50, 20);
+		andar02.add(vaga31).setBounds(10, 70, 50, 20);
+		andar02.add(vaga32).setBounds(10, 70, 50, 20);
+		andar02.add(vaga33).setBounds(10, 70, 50, 20);
+		andar02.add(vaga34).setBounds(10, 70, 50, 20);
+		andar02.add(vaga35).setBounds(10, 70, 50, 20);
+		andar02.add(vaga36).setBounds(10, 70, 50, 20);
+		andar02.add(vaga37).setBounds(10, 70, 50, 20);
+		andar02.add(vaga38).setBounds(10, 70, 50, 20);
+		andar02.add(vaga39).setBounds(10, 70, 50, 20);
+		andar02.add(vaga40).setBounds(10, 70, 50, 20);
+
+
+		andar02.add(voltar).setBounds(100, 100, 100, 100);
+		andar02.add(consultar).setBounds(100, 100, 100, 100);
+		andar02.add(andar01).setBounds(100, 100, 100, 100);
+		andar02.add(andar03).setBounds(100, 100, 100, 100);
+	}
+	static void andar03() {
+
+		andar03.setTitle("3°ANDAR");
+		andar03.setSize(1365, 700);
+		andar03.setLayout(null);
+		andar03.setVisible(true);
+		andar03.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		andar03.setResizable(false);
+		
+		andar03.add(vaga41).setBounds(10, 70, 50, 20);
+		andar03.add(vaga42).setBounds(10, 70, 50, 20);
+		andar03.add(vaga42).setBounds(10, 70, 50, 20);
+		andar03.add(vaga43).setBounds(10, 70, 50, 20);
+		andar03.add(vaga44).setBounds(10, 70, 50, 20);
+		andar03.add(vaga45).setBounds(10, 70, 50, 20);
+		andar03.add(vaga46).setBounds(10, 70, 50, 20);
+		andar03.add(vaga47).setBounds(10, 70, 50, 20);
+		andar03.add(vaga48).setBounds(10, 70, 50, 20);
+		andar03.add(vaga49).setBounds(10, 70, 50, 20);
+		andar03.add(vaga50).setBounds(10, 70, 50, 20);
+		andar03.add(vaga51).setBounds(10, 70, 50, 20);
+		andar03.add(vaga52).setBounds(10, 70, 50, 20);
+		andar03.add(vaga53).setBounds(10, 70, 50, 20);
+		andar03.add(vaga54).setBounds(10, 70, 50, 20);
+		andar03.add(vaga55).setBounds(10, 70, 50, 20);
+		andar03.add(vaga56).setBounds(10, 70, 50, 20);
+		andar03.add(vaga57).setBounds(10, 70, 50, 20);
+		andar03.add(vaga58).setBounds(10, 70, 50, 20);
+		andar03.add(vaga59).setBounds(10, 70, 50, 20);
+		andar03.add(vaga60).setBounds(10, 70, 50, 20);
+
+		andar03.add(voltar).setBounds(100, 100, 100, 100);
+		andar03.add(consultar).setBounds(100, 100, 100, 100);
+		andar03.add(andar01).setBounds(100, 100, 100, 100);
+		andar03.add(andar02).setBounds(100, 100, 100, 100);
 		
 	}
-static void telaestacionamento1() {
+	static void consulta() {
 
-		telaestacionamento1.setTitle("1°ANDAR DO ESTACIONAMENTO");
-		telaestacionamento1.setSize(1365, 700);
-		telaestacionamento1.setVisible(true);
-		telaestacionamento1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telaestacionamento1.setResizable(false);
-	
-	}
-static void telaestacionamento2() {
-
-		telaestacionamento2.setTitle("2°ANDAR DO ESTACIONAMENTO");
-		telaestacionamento2.setSize(1365, 700);
-		telaestacionamento2.setVisible(true);
-		telaestacionamento2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telaestacionamento2.setResizable(false);
+		consulta.setTitle("CONSULTA");
+		consulta.setSize(1365, 700);
+		consulta.setLayout(null);
+		consulta.setVisible(true);
+		consulta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		consulta.setResizable(false);
 		
-	}
-static void telaestacionamento3() {
 
-		telaestacionamento3.setTitle("3°ANDAR DO ESTACIONAMENTO");
-		telaestacionamento3.setSize(1365, 700);
-		telaestacionamento3.setVisible(true);
-		telaestacionamento3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telaestacionamento3.setResizable(false);
-		
-	}
-static void telafuncionario() {
 
-		telafuncionario.setTitle("FUNCIONARIO");
-		telafuncionario.setSize(1365, 700);
-		telafuncionario.setVisible(true);
-		telafuncionario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telafuncionario.setResizable(false);
-	
-	}
-static void telavagas() {
 
-		telavagas.setTitle("VAGAS");
-		telavagas.setSize(1365, 700);
-		telavagas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telavagas.setResizable(false);
-		
-	}
-static void telacarro() {
-
-		telacarro.setTitle("VAGAS DE CARROS NORMAIS");
-		telacarro.setSize(1365, 700);
-		telacarro.setVisible(true);
-		telacarro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telacarro.setResizable(false);
-		
-	}
-static void telamoto() {
-
-		telamoto.setTitle("VAGAS DE MOTOS");
-		telamoto.setSize(1365, 700);
-		telamoto.setVisible(true);
-		telamoto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telamoto.setResizable(false);
-		
-	}
-static void telaprioritario() {
-
-		Frame telaprioritario;
-		telaprioritario.setTitle("VAGAS PRIORITARIAS");
-		telaprioritario.setSize(1365, 700);
-		telaprioritario.setVisible(true);
-		((JFrame) telaprioritario).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telaprioritario.setResizable(false);
-		
-	}
-static void telaconsultavaga() {
-
-		telaconsultavaga.setTitle("CONSULTA VAGA");
-		telaconsultavaga.setSize(1365, 700);
-		telaconsultavaga.setVisible(true);
-		telaconsultavaga.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telaconsultavaga.setResizable(false);
-		
-	}
-static void telafaturamnento() {
-
-		Frame telafaturamnento;
-		telafaturamnento.setTitle("FATURAMENTO");
-		telafaturamnento.setSize(1365, 700);
-		telafaturamnento.setVisible(true);
-		((JFrame) telafaturamnento).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telafaturamnento.setResizable(false);
-		
-	}
-static void telareserva() {
-
-		telareserva.setTitle("RESERVA");
-		telareserva.setSize(1365, 700);
-		telareserva.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telareserva.setResizable(false);
-		
-	}
-static void telacliente() {
-
-		telacliente.setTitle("CLIENTE");
-		telacliente.setSize(1365, 700);
-		telacliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		telacliente.setResizable(false);
-		
+		consulta.add(inicio).setBounds(100, 100, 100, 100);
+		consulta.add(sair).setBounds(100, 100, 100, 100);
 	}
 
+	static void botoes() {
+
+		menu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				inicial.setVisible(false);
+				menu();
+
+			}
+		});
+		menu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				menu.setVisible(false);
+				consulta();
+
+			}
+		});
+		menu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				menu.setVisible(false);
+				andar01();
+
+			}
+		});
+		menu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				menu.setVisible(false);
+				andar02();
+
+			}
+		});
+		menu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				menu.setVisible(false);
+				andar03();
+
+			}
+		});
+		andar01.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				andar01(false);
+				andar02();
+
+			}
+		});
+		andar01.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				andar01(false);
+				andar03();
+
+			}
+		});
+		andar02.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				andar02(false);
+				andar01();
+
+			}
+		});
+		andar02.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				andar02(false);
+				andar03();
+
+			}
+		});
+		andar03.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				andar03(false);
+				andar01();
+
+			}
+		});
+		andar03.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				andar03(false);
+				andar02();
+
+			}
+		});
+		voltar1.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				menu.setVisible(false);
+				inicial();
+			}
+
+		});
+		voltar2.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				consulta.setVisible(false);
+				menu();
+			}
+
+		});
+		voltar3.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				andar01.setVisible(false);
+				menu();
+			}
+
+		});
+		voltar4.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				andar02.setVisible(false);
+				menu();
+			}
+
+		});
+		voltar5.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				andar03.setVisible(false);
+				menu();
+			}
+
+		});
+		sair.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+
+		});
 
 }
